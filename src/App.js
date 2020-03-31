@@ -1,26 +1,42 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import style from './Styles.module.scss';
+import PropTypes from "prop-types";
+import {Input} from './Components/Input';
+import {Title} from './Components/Title';
+import {useHistory} from 'react-router-dom';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+export const App = (props) => {
+    const {title, hintForNumber, hintForCode} = props.information;
+    const {inputNumber, inputCode, isDisabled, isHidden} = props.textInputs;
+    let history = useHistory();
 
-export default App;
+    if(props.information.authorization) history.push('/homepage');
+
+
+    return (
+        <div className={style.App}>
+            <Title title={title}/>
+            <Input
+                id={1}
+                isDisabled={isDisabled}
+                text={inputNumber}
+                onChange={props.onChange}
+                onSubmit={props.onSubmit}
+            />
+            <span>{hintForNumber}</span>
+            <Input
+                id={2}
+                isHidden={isHidden}
+                text={inputCode}
+                onChange={props.onChange}
+                onSubmit={props.onSubmit}
+            />
+            <span>{hintForCode}</span>
+        </div>
+    )
+};
+
+App.propTypes = {
+    textInputs: PropTypes.object,
+    information: PropTypes.object
+};

@@ -1,17 +1,34 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import {createStore, combineReducers, applyMiddleware} from 'redux';
+import createSagaMiddleware from 'redux-saga';
+import {Provider} from 'react-redux';
+import {textInputs} from './Reducers/textInputs';
+import {information} from './Reducers/information';
+import {ContainerApp, ContainerHomepage} from './containers';
+import {submitAsync} from './sagas';
+import {BrowserRouter as Router, Route} from 'react-router-dom';
+import {routerReducer} from 'react-router-redux';
+import {Redirect} from 'react-router-dom';
+
+const sagaMiddleware = createSagaMiddleware();
+
+const store = createStore(combineReducers({
+    routing: routerReducer,
+    textInputs,
+    information
+}), applyMiddleware(sagaMiddleware));
+
+sagaMiddleware.run(submitAsync);
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+    <Provider store={store}>
+        <Router>
+            <Route path='/authorization' component={ContainerApp}/>
+            <Route path='/homepage' component={ContainerHomepage}/>
+            <Redirect from='/' to='/authorization' />
+        </Router>
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+    </Provider>,
+    document.getElementById('root')
+);

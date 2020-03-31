@@ -1,0 +1,66 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-size: 16px;
+}
+$background: rgba(168, 255, 208, 0.71);
+$text: darkcyan;
+
+@for $i from 1 through 40 {
+  .letter#{$i} {
+    animation: show #{0.1 + $i * 0.02}s 1;
+  }
+}
+@keyframes show{
+  0%{
+    opacity:0;
+  }
+  95%{
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+.App {
+  width: 100vw;
+  height: 100vh;
+  border-radius: 0.5rem;
+  text-align: center;
+  background-color: $background;
+  font-size: 1.25rem;
+  color: $text;
+}
+.emptyLetter{
+  margin-left: 1rem;
+}
+.inputContainer {
+  margin-top: 4vh;
+
+}
+.input {
+  min-width: 25rem;
+  box-sizing: border-box;
+  margin: 3vh 0 1vh 0;
+  padding: 0.5rem 2rem;
+  border-radius: 0.5rem;
+  vertical-align: middle;
+  border: 1px solid $background;
+  color: $text;
+  font-size: 1.5rem;
+}
+.input:focus {
+  outline: none;
+  border: 0.275rem solid rgba(156, 239, 190, 0.93);
+  border-radius: 1rem;
+}
+
+.title{
+  padding-top: 3vh;
+  color: white;
+  font: bold 2rem/2rem Arial;
+  text-shadow: 0 0.25rem 0.75rem rgba(20, 20, 20, 0.95);
+}
