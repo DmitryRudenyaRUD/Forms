@@ -27,7 +27,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../snake-app" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -80,6 +80,23 @@
       <workItem from="1585651277318" duration="1534000" />
       <workItem from="1585653119739" duration="1690000" />
       <workItem from="1585657925931" duration="732000" />
+      <workItem from="1585753112646" duration="28000" />
+      <workItem from="1585769724468" duration="217000" />
+      <workItem from="1585769977442" duration="127000" />
+      <workItem from="1585863200661" duration="1673000" />
+      <workItem from="1585864953226" duration="889000" />
+      <workItem from="1585916750350" duration="1046000" />
+      <workItem from="1585942161319" duration="16000" />
+      <workItem from="1585993134149" duration="253000" />
+      <workItem from="1586027343529" duration="60000" />
+      <workItem from="1586183527527" duration="47000" />
+      <workItem from="1586184865605" duration="1430000" />
+      <workItem from="1586186632053" duration="1194000" />
+      <workItem from="1586190050853" duration="633000" />
+      <workItem from="1586191877011" duration="118000" />
+      <workItem from="1586199272770" duration="11000" />
+      <workItem from="1586199317903" duration="24000" />
+      <workItem from="1586722066760" duration="1503000" />
     </task>
     <servers />
   </component>
@@ -95,9 +112,9 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="258" y="122" key="EditFileWatcherDialog/0.0.1366.728@0.0.1366.728" timestamp="1585579242998" />
-    <state x="413" y="67" key="FileChooserDialogImpl" timestamp="1585653561758">
+    <state x="413" y="67" key="FileChooserDialogImpl" timestamp="1586199339886">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="413" y="67" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1585653561758" />
+    <state x="413" y="67" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1586199339886" />
   </component>
 </project>

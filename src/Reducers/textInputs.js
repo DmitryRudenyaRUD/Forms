@@ -57,17 +57,10 @@ export const textInputs = (state = initialState, action) => {
 };
 
 const handler = (arrayText) => {
-    const text = arrayText.reduce((str, item) => {
-        str += item;
-        return str
-    });
-
-    if(text.length < 4) {
-        return `+${text}`
-    } else if(text.length > 3 && text.length < 6) {
-        return `+${text.substr(0, 3)} (${text.substr(3, 2)})`
-    } else if(text.length > 5) {
-        return `+${text.substr(0, 3)} (${text.substr(3, 2)}) ${text.substr(5, 7)}`
-    }
+    return arrayText.reduce((str, item, i) =>
+         i === 3 ? str + ' (' + item :
+            i === 4 ? str + item + ') ' :
+                i === 7 || i === 9 ? str + item + '-' :
+                    i > 11 ? str : str + item, '+')
 };
 
